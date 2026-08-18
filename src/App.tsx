@@ -1,8 +1,9 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Toaster, toast } from "sonner"
 import { useEffect } from "react"
 import { AppProviders } from "@/context/AppProviders"
-import { LoginFormPage } from "@/pages/LoginFormPage"
+import { AssessmentWizardPage } from "@/pages/AssessmentWizardPage"
+import { AssessmentReportPage } from "@/pages/AssessmentReportPage"
 
 function ServerErrorListener() {
   useEffect(() => {
@@ -23,8 +24,8 @@ function App() {
       <BrowserRouter>
         <ServerErrorListener />
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<LoginFormPage />} />
+          <Route path="/" element={<AssessmentWizardPage />} />
+          <Route path="/report" element={<AssessmentReportPage />} />
         </Routes>
       </BrowserRouter>
       <Toaster richColors closeButton />
